@@ -1,0 +1,64 @@
+---
+title: "Incarcerations"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("dplyr")
+library("ggplot2")
+library("tidyr")
+library("lintr")
+library("plotly")
+library("leaflet")
+library("knitr")
+source("analysis.R")
+```
+
+## Introduction
+
+The data set that we focused on for this assignment was Incarcerations in the United States, a huge file that documented all incarcerations across the country for a long period of time. We were allowed to analyze any variable from this chart, so I chose to focus on the jail populations, and I evaluated this variable by race, gender, and state. 
+
+I calculated 5 relevant values of interest for the variable "jail population," which are as follows. The county with the largest jail population in the most recent year in the dataset was Los Angeles. The year that had the most women in jail was 1991. The county with the most men in jail was also Los Angeles county, most likely due to the fact that their jail population was the highest overall as well. The highest jail population county in Washington was King County. The year with the greatest jail population in Washington was 2001. These summary values are outlined in my `list` called `summary_info.` I then focus on the jail populations by race in my charts and map. 
+
+```{r cars}
+summary_info
+```
+## Chart 1: Time Trend Chart
+``` {r blue, echo=FALSE}
+blue_states_by_race
+```
+
+This chart focused on the states that vote blue and compared the jail populations by race over time. The chart is structured as a line chart with a legend to show the color code for each race jail population, and the trend line outlines how that jail population changes over time. It clearly shows that in states that vote blue, white people have recently (1985 onward) overtakin Black people in their jail population by race. 
+
+
+
+
+
+
+
+
+
+
+
+## Chart 2: Variable Comparison Chart
+
+
+```{r wa, echo=FALSE}
+washington_white_jail
+```
+
+This chart compares the populations between the white and black individuals in jail in the state of Washington. The chart is structured in a way that displays the populations as points for both races, and clearly shows that in the state of Washington, there are more cases of white people in jail than black people (as the data gets more sparse for when the black jail population increases along with the white male population).
+
+
+
+
+
+
+
+
+
+
+
+
+
