@@ -54,7 +54,12 @@ This chart compares the populations between the white and black individuals in j
 
 
 
+## Map:  Geographical Representation of Black Incarceration in the US
+```{r black, echo=FALSE}
+state_map_plot
+```
 
+This map shows a geographical visual representation of the black population incarceration rate in the US. The rate was calculated by dividing the black population in jail in a certain state by the total population in jail in that state. The legend shows "sum_rate," which goes from 0.1-0.5. The states that are 0.5 have almost half of their jail population consist of black individuals, and those states are the lighest shade of blue on the map. 
 
 
 

@@ -81,14 +81,33 @@ summary_info <- list()
       y = "Black Jail Population"
     )
   
-  
+ plot(washington_white_jail) 
 
   
+## Map for geographical distribution of Incarcerations
+  
+ states_data1 <- incarceration_trends %>%
+   filter(year == max(year)) %>%
+   mutate(State = tolower(state.name[match(state, state.abb)])) %>%
+   group_by(State) %>%
+   summarize(sum_rate = sum(black_jail_pop, na.rm = TRUE)/sum(total_jail_pop, na.rm = TRUE))
+ 
+  state_shape <- map_data("state") %>%
+   rename(State = region) %>%
+    left_join(states_data1, by= "State") 
+    
+    
+   state_map_plot <- ggplot(state_shape, aes(x = long, y = lat, group = group)) +
+   geom_polygon(aes(fill = sum_rate),
+                color = "white",
+                size = .1
+   ) +
+   coord_map() +
+     labs(
+       title = "Black Jail Population Rate", 
+       ) 
+plot(state_map_plot)
 
-  
-  
-  
-  
   
   
   
